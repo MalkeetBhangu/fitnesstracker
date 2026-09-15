@@ -94,6 +94,14 @@ This is a React Native fitness progress tracking app built for the machine codin
         └── UserTypes.ts
 ```
 
+## Setup & Configuration Instructions
+
+- **Node.js**: Requires Node.js `>= 22.11.0` (tested on Node v22.14.0).
+- **iOS Environment**: Xcode 15+ with CocoaPods installed (`pod install` in `ios/` folder). Deployment target: iOS 15.1+.
+- **Android Environment**: JDK 17+ and Android SDK 34+. Ensure `ANDROID_HOME` and `platform-tools` are set in your environment.
+- **SVG Transformer**: Configured via `metro.config.js` and `react-native-svg-transformer` for direct vector icon imports.
+- **Path Aliases**: TypeScript path mapping configured in `tsconfig.json` (`@src/*` -> `src/*`).
+
 ## Getting Started
 
 1. **Install Dependencies**:
