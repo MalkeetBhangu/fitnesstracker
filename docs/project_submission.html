@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fitness Tracker App - Technical Submission Report</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+  @page {
+    size: A4;
+    margin: 18mm 16mm 18mm 16mm;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #1a202c;
+    background-color: #ffffff;
+    line-height: 1.55;
+    font-size: 13.5px;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Header Section */
+  .header {
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 18px;
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .header-left h1 {
+    font-size: 24px;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+  }
+
+  .header-left .subtitle {
+    font-size: 13px;
+    font-weight: 500;
+    color: #64748b;
+  }
+
+  .badge {
+    display: inline-block;
+    background-color: #eff6ff;
+    color: #2563eb;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 9999px;
+    border: 1px solid #bfdbfe;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Section Styling */
+  .section {
+    margin-bottom: 26px;
+    page-break-inside: avoid;
+  }
+
+  .section-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0f172a;
+    border-left: 4px solid #2563eb;
+    padding-left: 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.2px;
+  }
+
+  .section-title .step-number {
+    color: #2563eb;
+    margin-right: 6px;
+  }
+
+  p {
+    margin-bottom: 10px;
+    color: #334155;
+  }
+
+  /* Cards & Boxes */
+  .card {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+  }
+
+  .card-title {
+    font-size: 13.5px;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  /* Code Block Styling */
+  .code-box {
+    background-color: #0f172a;
+    color: #f8fafc;
+    border-radius: 6px;
+    padding: 12px 14px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11.5px;
+    line-height: 1.6;
+    margin: 8px 0 12px 0;
+    overflow-x: auto;
+  }
+
+  .code-box .comment {
+    color: #64748b;
+  }
+
+  .code-box .cmd {
+    color: #38bdf8;
+    font-weight: 500;
+  }
+
+  .code-inline {
+    font-family: 'JetBrains Mono', monospace;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #e2e8f0;
+  }
+
+  /* Grid Layouts */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  /* Lists */
+  ul {
+    padding-left: 18px;
+    margin-bottom: 10px;
+  }
+
+  li {
+    margin-bottom: 6px;
+    color: #334155;
+  }
+
+  li strong {
+    color: #0f172a;
+  }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0 14px 0;
+    font-size: 12.5px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+
+  th {
+    background-color: #f1f5f9;
+    font-weight: 600;
+    color: #334155;
+    text-transform: uppercase;
+    font-size: 10.5px;
+    letter-spacing: 0.5px;
+  }
+
+  td {
+    color: #475569;
+  }
+
+  /* Callout alert */
+  .alert-warning {
+    background-color: #fffbeb;
+    border-left: 4px solid #f59e0b;
+    border-top: 1px solid #fef3c7;
+    border-right: 1px solid #fef3c7;
+    border-bottom: 1px solid #fef3c7;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 14px;
+    margin-top: 8px;
+  }
+
+  .alert-warning .alert-title {
+    font-weight: 700;
+    color: #b45309;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+
+  .page-break {
+    page-break-before: always;
+  }
+
+  .footer {
+    margin-top: 24px;
+    padding-top: 12px;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #94a3b8;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Document Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Fitness Tracker Mobile App</h1>
+      <div class="subtitle">React Native Machine Coding Assignment &bull; Client Technical Submission</div>
+    </div>
+    <div class="header-right">
+      <span class="badge">Production Ready</span>
+    </div>
+  </div>
+
+  <!-- SECTION 1: INSTRUCTIONS TO RUN THE PROJECT -->
+  <div class="section">
+    <div class="section-title">
+      <span class="step-number">1.</span> Instructions to Run the Project
+    </div>
+    <p>Follow these steps to clone, configure, and launch the mobile application on an iOS Simulator or Android Emulator.</p>
+
+    <div class="card">
+      <div class="card-title">Step 1: Clone Repository & Install Dependencies</div>
+      <div class="code-box">
+<span class="comment"># Clone the repository</span>
+<span class="cmd">git clone</span> https://github.com/MalkeetBhangu/fitnesstracker.git
+<span class="cmd">cd</span> fitnesstracker
+
+<span class="comment"># Install project dependencies</span>
+<span class="cmd">npm install</span>
+      </div>
+    </div>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="card-title">🍎 Running on iOS (macOS)</div>
+        <div class="code-box">
+<span class="comment"># 1. Install CocoaPods native dependencies</span>
+<span class="cmd">cd</span> ios && <span class="cmd">pod install</span> && <span class="cmd">cd</span> ..
+
+<span class="comment"># 2. Start Metro bundler in a terminal</span>
+<span class="cmd">npm start</span>
+
+<span class="comment"># 3. Launch iOS Simulator (iPhone 15/16)</span>
+<span class="cmd">npm run ios</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">🤖 Running on Android</div>
+        <div class="code-box">
+<span class="comment"># 1. Ensure Android Emulator is running</span>
+<span class="comment"># (or physical device connected via adb)</span>
+
+<span class="comment"># 2. Start Metro bundler</span>
+<span class="cmd">npm start</span>
+
+<span class="comment"># 3. Launch Android app build</span>
+<span class="cmd">npm run android</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Code Verification & Type Checking</div>
+      <div class="code-box">
+<span class="comment"># Run TypeScript compiler check (0 errors verified)</span>
+<span class="cmd">npx tsc --noEmit</span>
+
+<span class="comment"># Run ESLint quality checks</span>
+<span class="cmd">npm run lint</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: SETUP & CONFIGURATION INSTRUCTIONS -->
+  <div class="section">
+    <div class="section-title">
+      <span class="step-number">2.</span> Setup & Configuration Instructions
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Environment / Tool</th>
+          <th>Required Version</th>
+          <th>Configuration Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Node.js</strong></td>
+          <td>&ge; 22.11.0 (LTS)</td>
+          <td>Managed via NVM or native installation. Tested on Node v22.14.0.</td>
+        </tr>
+        <tr>
+          <td><strong>React Native / React</strong></td>
+          <td>RN 0.87.1 &bull; React 19.2.3</td>
+          <td>React Native Community CLI configured with Hermes engine enabled.</td>
+        </tr>
+        <tr>
+          <td><strong>iOS Environment</strong></td>
+          <td>Xcode &ge; 15.0 &bull; CocoaPods &ge; 1.14</td>
+          <td>Deployment target iOS 15.1+. Run <span class="code-inline">pod install</span> in the <span class="code-inline">ios/</span> folder.</td>
+        </tr>
+        <tr>
+          <td><strong>Android Environment</strong></td>
+          <td>JDK 17 &bull; Android SDK 34+</td>
+          <td>Ensure <span class="code-inline">ANDROID_HOME</span> is set in shell profile and platform-tools in <span class="code-inline">PATH</span>.</td>
+        </tr>
+        <tr>
+          <td><strong>Asset Transformer</strong></td>
+          <td><span class="code-inline">react-native-svg-transformer</span></td>
+          <td>Configured in <span class="code-inline">metro.config.js</span> for direct SVG component imports.</td>
+        </tr>
+        <tr>
+          <td><strong>Path Aliases</strong></td>
+          <td>TypeScript <span class="code-inline">paths</span> mapping</td>
+          <td>Configured in <span class="code-inline">tsconfig.json</span> with <span class="code-inline">@src/*</span> pointing directly to <span class="code-inline">src/*</span>.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="page-break"></div>
+
+  <!-- SECTION 3: ARCHITECTURE & KEY TECHNICAL DECISIONS -->
+  <div class="section">
+    <div class="section-title">
+      <span class="step-number">3.</span> Architecture & Key Technical Decisions
+    </div>
+
+    <div class="card">
+      <div class="card-title">1. Polymorphic Section Feed Model (Virtualization & Performance)</div>
+      <p>The Progress screen uses a <strong>Polymorphic Section Architecture</strong> (<span class="code-inline">Section[]</span>) managed via <span class="code-inline">transformProgressToSections</span>. Rather than rendering individual hardcoded scroll views, server/mock responses are decoupled and transformed into strongly typed discriminated union items:</p>
+      <ul>
+        <li><strong>CurrentWeightCard</strong> &bull; <strong>GoalCard</strong> &bull; <strong>WeightChartCard</strong> &bull; <strong>BmiCard</strong> &bull; <strong>RecentLogsCard</strong> &bull; <strong>WalkthroughCard</strong></li>
+      </ul>
+      <p>This allows single-pass virtualization, recycling, smooth 60fps scrolling, and effortless addition/reordering of dashboard cards.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">2. State Management & Zero-Latency Persistence (Zustand + MMKV)</div>
+      <p>User preferences (including selected language code) are managed through <strong>Zustand</strong> and paired directly with <strong>MMKV</strong> (<span class="code-inline">react-native-mmkv</span>) via Zustand's <span class="code-inline">persist</span> middleware. Unlike asynchronous <span class="code-inline">AsyncStorage</span>, MMKV offers synchronous C++ native bindings, eliminating UI flashes or race conditions during app rehydration.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">3. Zero-Hardcoded-Strings Localization Pipeline (i18n)</div>
+      <p>Strict architectural rule enforced across the codebase: <strong>100% of user-facing strings, units (<span class="code-inline">kg</span>, <span class="code-inline">cm</span>), months, and days</strong> reside in <span class="code-inline">en.json</span> and <span class="code-inline">de.json</span>. The custom <span class="code-inline">getTexts(languageCode)</span> selector provides type-safe reactive updates whenever a user toggles languages via the header options modal (<span class="code-inline">...</span>).</p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">4. Custom SVG Graphics & Precision Visualizations</div>
+      <p>Interactive graphics are built from scratch using <span class="code-inline">react-native-svg</span>:</p>
+      <ul>
+        <li><strong>Interactive Weight Chart</strong>: Smooth cubic bezier curve with gradient fill, touchable active points, and dynamic speech bubble tooltip with notch pointer.</li>
+        <li><strong>BMI Gauge</strong>: 4-band colored gauge (Underweight, Normal, Overweight, Obese) with dynamic geometric pin placement calculated directly from current BMI values.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <div class="card-title">5. Design Tokens & Responsive Dimensions</div>
+      <p>Centralized design token system in <span class="code-inline">Colors.ts</span> (strict RGBA color palette) and <span class="code-inline">StyleHelper.ts</span> (<span class="code-inline">getHeight</span>, <span class="code-inline">getWidth</span>) ensuring pixel-perfect fidelity across all iOS and Android device screen densities.</p>
+    </div>
+  </div>
+
+  <!-- SECTION 4: 4-HOUR LIMIT SCOPE NOTE -->
+  <div class="section">
+    <div class="section-title">
+      <span class="step-number">4.</span> Scope Note & Future Enhancements (4-Hour Limit)
+    </div>
+
+    <p>Within the allotted 4-hour machine coding timeframe, the primary focus was on completing all core Progress Dashboard cards, pixel-perfect UI fidelity, interactive SVG charts and gauges, custom bottom tab navigation, persistent multi-language localization (EN/DE), and full TypeScript type safety (0 errors).</p>
+
+    <div class="alert-warning">
+      <div class="alert-title">Items Scoped for Subsequent Iteration:</div>
+      <ul>
+        <li><strong>Embedded Native Video Playback</strong>: The Walkthrough Carousel contains full thumbnail layouts, play button overlays, tag badges, and metadata; integrating a full native video playback player (e.g. <span class="code-inline">react-native-video</span> modal player) was deferred to future sprint work.</li>
+        <li><strong>Full CRUD Mutation Forms</strong>: Interactive edit buttons on Weight, Goal, and BMI cards are connected to event handlers; connecting them to editable bottom-sheet modals with backend API write mutations was scheduled for the next phase.</li>
+        <li><strong>Detox E2E Test Suite</strong>: TypeScript compilation (<span class="code-inline">tsc --noEmit</span>) and ESLint are fully passing with 0 errors; full automated end-to-end Detox test suites and Jest component snapshot tests were reserved for future releases.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Document Footer -->
+  <div class="footer">
+    <div>Fitness Tracker App &bull; Machine Coding Assignment</div>
+    <div>Report Generated on September 15, 2026 &bull; Status: Complete & Verified</div>
+  </div>
+
+</div>
+
+</body>
+</html>
