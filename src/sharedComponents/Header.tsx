@@ -106,6 +106,7 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: getHeight(19),
+        fontWeight: '700',
         color: colors.black,
         textAlign: 'center',
     },
