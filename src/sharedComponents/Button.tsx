@@ -1,7 +1,6 @@
 import { getHeight, getWidth } from '@src/libs/StyleHelper'
 import TextView from '@src/sharedComponents/TextView'
 import colors from '@src/tokens/Colors'
-import radius from '@src/tokens/Radius'
 import React from 'react'
 import { Pressable, PressableProps, StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
@@ -38,7 +37,7 @@ const styles = StyleSheet.create({
         width: '100%',
         height: getHeight(54),
         paddingHorizontal: getWidth(20),
-        borderRadius: radius.button,
+        borderRadius: getHeight(50),
         backgroundColor: colors.primaryBlue,
         alignItems: 'center',
         justifyContent: 'center',
