@@ -1,4 +1,3 @@
 export enum QUERY_KEYS {
-    STREAMS = 'STREAMS',
-    COUNTRIES = 'COUNTRIES',
+    PROGRESS = 'PROGRESS',
 }

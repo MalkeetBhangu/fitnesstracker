@@ -1,0 +1,212 @@
+{
+    "currentWeight": {
+        "value": 82.4,
+        "unit": "kg",
+        "delta": 0.2,
+        "trend": "up",
+        "lastLoggedAt": "2026-09-11T00:00:00Z"
+    },
+    "goal": {
+        "target": 55,
+        "unit": "kg",
+        "targetDate": "2026-05-07",
+        "pace": {
+            "value": 0.5,
+            "unit": "kg/wk",
+            "label": "moderate"
+        }
+    },
+    "chart": {
+        "ranges": [
+            "W",
+            "M",
+            "6M",
+            "Y"
+        ],
+        "defaultRange": "6M",
+        "seriesByRange": {
+            "W": [
+                {
+                    "date": "2026-09-09",
+                    "avgWeight": 82.6
+                },
+                {
+                    "date": "2026-09-10",
+                    "avgWeight": 82.5
+                },
+                {
+                    "date": "2026-09-11",
+                    "avgWeight": 82.4
+                },
+                {
+                    "date": "2026-09-12",
+                    "avgWeight": 82.4
+                },
+                {
+                    "date": "2026-09-13",
+                    "avgWeight": 82.3
+                },
+                {
+                    "date": "2026-09-14",
+                    "avgWeight": 82.4
+                },
+                {
+                    "date": "2026-09-15",
+                    "avgWeight": 82.4
+                }
+            ],
+            "M": [
+                {
+                    "date": "2026-08-16",
+                    "avgWeight": 83.0
+                },
+                {
+                    "date": "2026-08-23",
+                    "avgWeight": 82.8
+                },
+                {
+                    "date": "2026-08-30",
+                    "avgWeight": 82.7
+                },
+                {
+                    "date": "2026-09-06",
+                    "avgWeight": 82.5
+                },
+                {
+                    "date": "2026-09-15",
+                    "avgWeight": 82.4
+                }
+            ],
+            "6M": [
+                {
+                    "date": "2026-04-01",
+                    "avgWeight": 84.2
+                },
+                {
+                    "date": "2026-05-01",
+                    "avgWeight": 83.5
+                },
+                {
+                    "date": "2026-05-07",
+                    "avgWeight": 82.0
+                },
+                {
+                    "date": "2026-06-01",
+                    "avgWeight": 82.6
+                },
+                {
+                    "date": "2026-07-01",
+                    "avgWeight": 82.9
+                },
+                {
+                    "date": "2026-08-01",
+                    "avgWeight": 82.7
+                },
+                {
+                    "date": "2026-09-01",
+                    "avgWeight": 82.5
+                }
+            ],
+            "Y": [
+                {
+                    "date": "2025-10-01",
+                    "avgWeight": 87.0
+                },
+                {
+                    "date": "2025-12-01",
+                    "avgWeight": 85.6
+                },
+                {
+                    "date": "2026-02-01",
+                    "avgWeight": 84.4
+                },
+                {
+                    "date": "2026-04-01",
+                    "avgWeight": 84.2
+                },
+                {
+                    "date": "2026-06-01",
+                    "avgWeight": 82.6
+                },
+                {
+                    "date": "2026-09-01",
+                    "avgWeight": 82.5
+                }
+            ]
+        },
+        "highlight": {
+            "range": "6M",
+            "date": "2026-05-07",
+            "label": "1-7 May 2026",
+            "avgWeight": 82.0
+        }
+    },
+    "bmi": {
+        "value": 20.6,
+        "status": "normal",
+        "heightCm": 137,
+        "scale": {
+            "min": 0,
+            "max": 30,
+            "bands": [
+                18.5,
+                25
+            ]
+        }
+    },
+    "recentLogs": {
+        "items": [
+            {
+                "id": "log_1",
+                "weight": 82.4,
+                "unit": "kg",
+                "waistCm": 91.2,
+                "delta": -0.4,
+                "trend": "down",
+                "loggedAt": "2026-09-11"
+            },
+            {
+                "id": "log_2",
+                "weight": 82.4,
+                "unit": "kg",
+                "waistCm": null,
+                "delta": 0.2,
+                "trend": "up",
+                "loggedAt": "2026-09-11"
+            },
+            {
+                "id": "log_3",
+                "weight": 82.4,
+                "unit": "kg",
+                "waistCm": null,
+                "delta": -0.4,
+                "trend": "down",
+                "loggedAt": "2026-09-11"
+            }
+        ],
+        "hasMore": true,
+        "nextCursor": "log_3"
+    },
+    "walkthrough": {
+        "items": [
+            {
+                "id": "wt_1",
+                "tag": "Pen",
+                "title": "How to dispose of the pen or needle safely?",
+                "videoUrl": "https://example.com/videos/pen-disposal.mp4",
+                "thumbnailUrl": "https://example.com/thumbnails/pen-disposal.jpg",
+                "durationSeconds": 96
+            },
+            {
+                "id": "wt_2",
+                "tag": "Injection",
+                "title": "How to store your medication correctly?",
+                "videoUrl": "https://example.com/videos/storage.mp4",
+                "thumbnailUrl": "https://example.com/thumbnails/storage.jpg",
+                "durationSeconds": 74
+            }
+        ],
+        "hasMore": true,
+        "nextCursor": "wt_2"
+    }
+}

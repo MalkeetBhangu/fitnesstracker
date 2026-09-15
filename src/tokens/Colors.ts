@@ -10,6 +10,14 @@ const colors = {
     borderGrey: 'rgba(229, 231, 235, 1)',
     shadowColor: 'rgba(240, 240, 240, 1)',
     tabHighlight: 'rgba(243, 244, 246, 1)',
+    textSecondary: 'rgba(102, 112, 133, 1)',
+    badgeOrangeBg: 'rgba(254, 246, 238, 1)',
+    badgeOrangeText: 'rgba(220, 104, 3, 1)',
+    badgeGreenBg: 'rgba(236, 253, 243, 1)',
+    badgeGreenText: 'rgba(2, 122, 72, 1)',
+    goalIconBg: 'rgba(254, 243, 242, 1)',
+    goalIconColor: 'rgba(240, 68, 56, 1)',
+    subCardBg: 'rgba(248, 249, 250, 1)',
 }
 
 export default colors

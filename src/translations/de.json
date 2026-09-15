@@ -7,6 +7,31 @@
             "learn": "Lernen",
             "profile": "Profil"
         },
-        "common": {}
+        "progress": {
+            "currentWeight": "Aktuelles Gewicht",
+            "edit": "Bearbeiten",
+            "lastLogged": "Zuletzt eingetragen",
+            "yourGoal": "Dein Ziel",
+            "trackingProgress": "Verfolgen Sie Ihre Fortschritte auf dem Weg zum Ziel.",
+            "target": "Ziel",
+            "by": "Bis",
+            "pace": "Tempo"
+        },
+        "common": {
+            "months": {
+                "jan": "Jan",
+                "feb": "Feb",
+                "mar": "Mär",
+                "apr": "Apr",
+                "may": "Mai",
+                "jun": "Jun",
+                "jul": "Jul",
+                "aug": "Aug",
+                "sep": "Sep",
+                "oct": "Okt",
+                "nov": "Nov",
+                "dec": "Dez"
+            }
+        }
     }
 }

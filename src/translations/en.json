@@ -7,6 +7,31 @@
             "learn": "Learn",
             "profile": "Profile"
         },
-        "common": {}
+        "progress": {
+            "currentWeight": "Current weight",
+            "edit": "Edit",
+            "lastLogged": "Last logged",
+            "yourGoal": "Your Goal",
+            "trackingProgress": "Tracking your progress toward target.",
+            "target": "Target",
+            "by": "By",
+            "pace": "Pace"
+        },
+        "common": {
+            "months": {
+                "jan": "Jan",
+                "feb": "Feb",
+                "mar": "Mar",
+                "apr": "Apr",
+                "may": "May",
+                "jun": "Jun",
+                "jul": "Jul",
+                "aug": "Aug",
+                "sep": "Sep",
+                "oct": "Oct",
+                "nov": "Nov",
+                "dec": "Dec"
+            }
+        }
     }
 }
