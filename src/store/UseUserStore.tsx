@@ -1,6 +1,6 @@
 import { DEFAULT_LANGUAGE_CODE } from '@src/constants/Constants'
 import { User } from '@src/types/UserTypes'
-import { localStorage, STORAGE } from 'src/localStorage/Store'
+import { localStorage, STORAGE } from '@src/localStorage/Store'
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
@@ -16,7 +16,6 @@ export const useUserStore = create<UserState>()(
     persist(
         (set) => ({
             userData: {
-                userId: '',
                 languageCode: DEFAULT_LANGUAGE_CODE
             } as Partial<User>,
             setUserData: (data: Partial<User>) =>

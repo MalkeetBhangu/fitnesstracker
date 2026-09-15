@@ -2,13 +2,8 @@ import colors from '@tokens/Colors';
 import React from 'react';
 import { ActivityIndicator, StyleSheet, View } from 'react-native';
 
-interface LoaderProps {
-    visible: boolean;
-}
 
-const Loader: React.FC<LoaderProps> = ({ visible }) => {
-    if (!visible) return null;
-
+const Loader: React.FC = () => {
     return (
         <View style={styles.overlay}>
             <ActivityIndicator size="large" color={colors.primaryBlue} />

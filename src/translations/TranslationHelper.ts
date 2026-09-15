@@ -1,6 +1,6 @@
-import { DEFAULT_LANGUAGE_CODE } from 'src/constants/Constants'
-import de from 'src/translations/de.json'
-import en from 'src/translations/en.json'
+import { DEFAULT_LANGUAGE_CODE } from '@src/constants/Constants'
+import de from '@src/translations/de.json'
+import en from '@src/translations/en.json'
 
 
 export const languageMap = {

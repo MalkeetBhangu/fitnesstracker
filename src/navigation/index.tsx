@@ -26,8 +26,8 @@ const Navigation: React.FC = () => {
 
     return (
         <NavigationContainer theme={navigationTheme} onReady={handleNavigationReady}>
-            <MainStack.Navigator initialRouteName={HOME} screenOptions={{ headerShown: false }}>
-                <MainStack.Screen name={TABS.BOTTOM_TABS} component={TabNavigator} />
+            <MainStack.Navigator initialRouteName={TABS.BOTTOM_TABS} screenOptions={{ headerShown: false }}>
+                <MainStack.Screen options={{ navigationBarHidden: true }} name={TABS.BOTTOM_TABS} component={TabNavigator} />
             </MainStack.Navigator>
         </NavigationContainer>
     )
