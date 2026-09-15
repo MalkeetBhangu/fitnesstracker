@@ -16,11 +16,9 @@ export interface TextViewProps extends TextProps {
 const TextView: React.FunctionComponent<TextViewProps> = (props) => {
     const { text, numberOfLines, style, onPress, onLayout, fontFamily, children, ...rest } = props
     return (
-        <Text {...rest} style={[style, fontFamily ? { fontFamily } : undefined]} numberOfLines={numberOfLines} onLayout={onLayout} onPress={onPress} >
-            <>
-                {text}
-                {children}
-            </>
+        <Text {...rest} style={[style, fontFamily ? { fontFamily } : undefined]} numberOfLines={numberOfLines} onLayout={onLayout} onPress={onPress}>
+            {text}
+            {children}
         </Text>
     )
 }

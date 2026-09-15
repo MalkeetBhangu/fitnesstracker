@@ -194,7 +194,7 @@
                 "tag": "Pen",
                 "title": "How to dispose of the pen or needle safely?",
                 "videoUrl": "https://example.com/videos/pen-disposal.mp4",
-                "thumbnailUrl": "https://example.com/thumbnails/pen-disposal.jpg",
+                "thumbnailUrl": "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600&auto=format&fit=crop&q=80",
                 "durationSeconds": 96
             },
             {
@@ -202,7 +202,7 @@
                 "tag": "Injection",
                 "title": "How to store your medication correctly?",
                 "videoUrl": "https://example.com/videos/storage.mp4",
-                "thumbnailUrl": "https://example.com/thumbnails/storage.jpg",
+                "thumbnailUrl": "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&auto=format&fit=crop&q=80",
                 "durationSeconds": 74
             }
         ],

@@ -15,9 +15,36 @@
             "trackingProgress": "Verfolgen Sie Ihre Fortschritte auf dem Weg zum Ziel.",
             "target": "Ziel",
             "by": "Bis",
-            "pace": "Tempo"
+            "pace": "Tempo",
+            "average": "Durchschnitt",
+            "bmi": "BMI",
+            "normal": "Normal",
+            "bmiHealthyRange": "Ihr BMI liegt im gesunden Bereich.",
+            "height": "Größe",
+            "bmiCalculatedNote": "Ihr BMI wird auf Basis dieser Körpergröße berechnet.",
+            "recentLogs": "Letzte Einträge",
+            "viewAll": "Alle anzeigen",
+            "waist": "Taille",
+            "walkthrough": "Einführung",
+            "kg": "kg",
+            "cm": "cm"
+        },
+        "languageModal": {
+            "title": "Sprache wählen",
+            "english": "Englisch",
+            "german": "Deutsch",
+            "cancel": "Abbrechen"
         },
         "common": {
+            "days": {
+                "sun": "Sonntag",
+                "mon": "Montag",
+                "tue": "Dienstag",
+                "wed": "Mittwoch",
+                "thu": "Donnerstag",
+                "fri": "Freitag",
+                "sat": "Samstag"
+            },
             "months": {
                 "jan": "Jan",
                 "feb": "Feb",

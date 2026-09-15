@@ -1,5 +1,5 @@
 import { home, journal, learn, profile, progress } from '@assets/index'
-import { BottomTabBarProps, createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { DEFAULT_LANGUAGE_CODE } from '@src/constants/Constants'
 import { Screens, TABS } from '@src/constants/Screens'
@@ -76,78 +76,76 @@ const TabNavigator = () => {
         { tabIcon: profile, name: TABS.PROFILE_TAB, screen: ProfileNavigator, label: t.tabs.profile },
     ]
 
-    const CustomTabBar = ({ state, navigation }: BottomTabBarProps) => {
-        return (
-            <View
-                style={[
-                    styles.tabBarContainer,
-                    {
-                        bottom: bottomMargin,
-                        height: tabBarHeight,
-                        borderRadius: tabBarHeight / 2,
-                    },
-                ]}
-            >
-                {state.routes.map((route, index) => {
-                    const isFocused = state.index === index
-                    const item = TabNames[index]
-                    if (!item) return null
-
-                    const Icon = item.tabIcon
-                    const tintColor = isFocused ? colors.primaryBlue : colors.darkGrey
-
-                    const onPress = () => {
-                        const event = navigation.emit({
-                            type: 'tabPress',
-                            target: route.key,
-                            canPreventDefault: true,
-                        })
-
-                        if (!isFocused && !event.defaultPrevented) navigation.navigate(route.name)
-                    }
-
-                    return (
-                        <Pressable
-                            key={route.key}
-                            accessibilityRole="button"
-                            accessibilityState={isFocused ? { selected: true } : {}}
-                            onPress={onPress}
-                            style={styles.tabButton}
-                        >
-                            <View
-                                style={[
-                                    styles.tabHighlight,
-                                    {
-                                        width: tabCircleSize,
-                                        height: tabCircleSize,
-                                        borderRadius: tabCircleSize / 2,
-                                    },
-                                    isFocused && styles.activeTabHighlight,
-                                ]}
-                            >
-                                <Icon width={getHeight(21)} height={getHeight(21)} fill={tintColor} color={tintColor} />
-                                <TextView
-                                    numberOfLines={1}
-                                    text={item.label}
-                                    style={[
-                                        styles.tabLabel,
-                                        {
-                                            color: tintColor,
-                                        },
-                                    ]}
-                                />
-                            </View>
-                        </Pressable>
-                    )
-                })}
-            </View>
-        )
-    }
-
     return (
         <Tab.Navigator
-            tabBar={(props) => <CustomTabBar {...props} />}
-            screenOptions={{ headerShown: false, tabBarHideOnKeyboard: true, }}
+            initialRouteName={TABS.PROGRESS_TAB}
+            tabBar={({ state, navigation }) => (
+                <View
+                    style={[
+                        styles.tabBarContainer,
+                        {
+                            bottom: bottomMargin,
+                            height: tabBarHeight,
+                            borderRadius: tabBarHeight / 2,
+                        },
+                    ]}
+                >
+                    {state.routes.map((route, index) => {
+                        const isFocused = state.index === index
+                        const item = TabNames[index]
+                        if (!item) return null
+
+                        const Icon = item.tabIcon
+                        const tintColor = isFocused ? colors.primaryBlue : colors.darkGrey
+
+                        const onPress = () => {
+                            const event = navigation.emit({
+                                type: 'tabPress',
+                                target: route.key,
+                                canPreventDefault: true,
+                            })
+
+                            if (!isFocused && !event.defaultPrevented) {
+                                navigation.navigate(route.name)
+                            }
+                        }
+
+                        return (
+                            <Pressable
+                                key={route.key}
+                                accessibilityState={isFocused ? { selected: true } : {}}
+                                onPress={onPress}
+                                style={styles.tabButton}
+                            >
+                                <View
+                                    style={[
+                                        styles.tabHighlight,
+                                        {
+                                            width: tabCircleSize,
+                                            height: tabCircleSize,
+                                            borderRadius: tabCircleSize / 2,
+                                        },
+                                        isFocused && styles.activeTabHighlight,
+                                    ]}
+                                >
+                                    <Icon width={getHeight(21)} height={getHeight(21)} fill={tintColor} color={tintColor} />
+                                    <TextView
+                                        numberOfLines={1}
+                                        text={item.label}
+                                        style={[
+                                            styles.tabLabel,
+                                            {
+                                                color: tintColor,
+                                            },
+                                        ]}
+                                    />
+                                </View>
+                            </Pressable>
+                        )
+                    })}
+                </View>
+            )}
+            screenOptions={{ headerShown: false, tabBarHideOnKeyboard: true }}
         >
             {TabNames.map((item) => <Tab.Screen key={item.name} name={item.name} component={item.screen} />)}
         </Tab.Navigator>

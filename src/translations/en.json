@@ -15,9 +15,36 @@
             "trackingProgress": "Tracking your progress toward target.",
             "target": "Target",
             "by": "By",
-            "pace": "Pace"
+            "pace": "Pace",
+            "average": "Average",
+            "bmi": "BMI",
+            "normal": "Normal",
+            "bmiHealthyRange": "Your BMI is within the healthy range.",
+            "height": "Height",
+            "bmiCalculatedNote": "Your BMI is calculated based on this height.",
+            "recentLogs": "Recent logs",
+            "viewAll": "View all",
+            "waist": "waist",
+            "walkthrough": "Walkthrough",
+            "kg": "kg",
+            "cm": "cm"
+        },
+        "languageModal": {
+            "title": "Select Language",
+            "english": "English",
+            "german": "German",
+            "cancel": "Cancel"
         },
         "common": {
+            "days": {
+                "sun": "Sunday",
+                "mon": "Monday",
+                "tue": "Tuesday",
+                "wed": "Wednesday",
+                "thu": "Thursday",
+                "fri": "Friday",
+                "sat": "Saturday"
+            },
             "months": {
                 "jan": "Jan",
                 "feb": "Feb",

@@ -1,8 +1,9 @@
 import { getHeight, getWidth } from '@src/libs/StyleHelper'
+import TextView from '@src/sharedComponents/TextView'
 import colors from '@src/tokens/Colors'
 import radius from '@src/tokens/Radius'
 import React from 'react'
-import { Pressable, PressableProps, StyleProp, StyleSheet, Text, TextStyle, ViewStyle } from 'react-native'
+import { Pressable, PressableProps, StyleProp, StyleSheet, TextStyle, ViewStyle } from 'react-native'
 
 export interface ButtonProps extends Omit<PressableProps, 'style'> {
     title: string
@@ -27,9 +28,7 @@ export default function Button({ title, isDisabled = false, style, textStyle, di
                 style,
             ]}
         >
-            <Text style={[styles.text, textStyle]}>
-                {title}
-            </Text>
+            <TextView style={[styles.text, textStyle]} text={title} />
         </Pressable>
     )
 }

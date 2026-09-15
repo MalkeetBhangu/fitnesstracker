@@ -18,6 +18,15 @@ const colors = {
     goalIconBg: 'rgba(254, 243, 242, 1)',
     goalIconColor: 'rgba(240, 68, 56, 1)',
     subCardBg: 'rgba(248, 249, 250, 1)',
+    gridLine: 'rgba(242, 244, 247, 1)',
+    chartBlue: 'rgba(46, 144, 250, 1)',
+    bmiScaleIconBg: 'rgba(242, 244, 247, 1)',
+    bmiBandUnderweight: 'rgba(234, 214, 203, 1)',
+    bmiBandNormal: 'rgba(209, 233, 220, 1)',
+    bmiBandOverweight: 'rgba(244, 235, 192, 1)',
+    bmiBandObese: 'rgba(227, 196, 179, 1)',
+    playButtonBg: 'rgba(20, 29, 47, 0.55)',
+    playButtonBorder: 'rgba(255, 255, 255, 0.9)',
 }
 
 export default colors
