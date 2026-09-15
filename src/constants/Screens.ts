@@ -1,0 +1,16 @@
+export enum Screens {
+    HOME = 'HOME',
+    PROGRESS = 'PROGRESS',
+    JOURNAL = 'JOURNAL',
+    LEARN = 'LEARN',
+    PROFILE = 'PROFILE',
+}
+
+export enum TABS {
+    HOME_TAB = 'HOME_TAB',
+    PROGRESS_TAB = 'PROGRESS_TAB',
+    LEARN_TAB = 'LEARN_TAB',
+    JOURNAL_TAB = 'JOURNAL_TAB',
+    PROFILE_TAB = 'PROFILE_TAB',
+    BOTTOM_TABS = 'BOTTOM_TABS',
+}

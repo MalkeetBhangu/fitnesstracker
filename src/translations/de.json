@@ -1,0 +1,13 @@
+{
+    "translation": {
+        "tabs": {
+            "home": "Startseite",
+            "progress": "Fortschritt",
+            "journal": "Tagebuch",
+            "learn": "Lernen",
+            "profile": "Profil"
+        },
+        "home": {},
+        "common": {}
+    }
+}

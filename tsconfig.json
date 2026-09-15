@@ -1,5 +1,58 @@
 {
   "extends": "@react-native/typescript-config",
-  "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "declarations.d.ts"
+  ],
+  "exclude": [
+    "**/node_modules",
+    "**/Pods"
+  ],
+  "compilerOptions": {
+    "baseUrl": ".",
+    "ignoreDeprecations": "6.0",
+    "paths": {
+      "@src/*": [
+        "./src/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@constants/*": [
+        "./src/constants/*"
+      ],
+      "@navigation/*": [
+        "./src/navigation/*"
+      ],
+      "@tokens/*": [
+        "./src/tokens/*"
+      ],
+      "@utils/*": [
+        "./src/utils/*"
+      ],
+      "@apiConfigs/*": [
+        "./src/apiConfigs/*"
+      ],
+      "@services/*": [
+        "./src/services/*"
+      ],
+      "@assets/*": [
+        "./assets/*"
+      ],
+      "@assets": [
+        "./assets"
+      ],
+      "@screens/*": [
+        "./src/screens/*"
+      ],
+      "@types/*": [
+        "./src/types/*"
+      ],
+      "@sharedComponents/*": [
+        "./src/sharedComponents/*"
+      ]
+    },
+    "strict": true
+  }
 }
