@@ -1,89 +1,41 @@
 # Fitness Tracker - React Native Machine Coding Assignment
 
-This is a modern, high-performance Fitness & Health Progress Tracking mobile app built with **React Native (0.87.1)**, **React 19**, **TypeScript**, **React Navigation**, **TanStack React Query**, and **Zustand**.
+This is a React Native fitness progress tracking app built for the machine coding assignment using React Navigation, TanStack React Query, Zustand, and MMKV.
 
 ## Features
 
-- **Progress Dashboard Screen**:
-  - Virtualized, performance-optimized feed using a polymorphic Section model (`Section[]`).
-  - Auto-selected default landing tab upon app launch.
-  - Header with bold title and options modal trigger (`...`).
-
-- **Current Weight Card**:
-  - Live weight display in kilograms (`kg`).
-  - Dynamic weight change badge with directional trend indicators (`+` / `-`).
-  - Formatted last-logged date and edit button trigger.
-
-- **Goal Progress Card**:
-  - Target weight tracking with concentric activity rings icon.
-  - Target date formatting with remaining weight delta.
-  - Pace indicator with progress badge.
-
-- **Interactive Weight Chart**:
-  - Smooth cubic bezier curve with gradient fill rendered via `react-native-svg`.
-  - Interactive touchable data points with dynamic selection.
-  - Custom speech bubble tooltip with speech notch pointing directly to the active point.
-  - Time range filter selectors (`W`, `M`, `6M`, `Y`) with responsive X/Y axis grid lines.
-
-- **BMI Visualizer Card**:
-  - Custom 4-band colored gauge (Underweight, Normal, Overweight, Obese).
-  - Dynamically calculated indicator pin positioned based on exact BMI values.
-  - User height info tile with quick edit modal trigger and localized units (`cm`).
-
-- **Recent Logs Section**:
-  - Chronological history of previous weight and waist measurements.
-  - Directional trend arrows and localized date formatting.
-
-- **Walkthrough Video Carousel**:
-  - Horizontal snap carousel of video cards.
-  - Custom translucent play button overlay, category tag pills, and multiline titles.
+- **Progress Screen**:
+  - Virtualized dashboard displaying current weight, target goal, weight chart, BMI gauge, recent logs, and video walkthrough carousel.
+  - Interactive cubic bezier SVG chart with range filters (`W`, `M`, `6M`, `Y`) and touchable data point tooltip.
+  - Dynamic 4-band BMI visualizer gauge with calculated indicator pin.
+  - Horizontal video carousel with custom play button overlay.
 
 - **Multi-Language Support (i18n)**:
-  - Full English (🇬🇧) and German (🇩🇪) localization.
-  - **Zero static strings rule**: all labels, units (`kg`, `cm`), month names, and day names are centralized in `en.json` and `de.json`.
-  - Header More options modal for instant runtime language switching.
-  - Persistent language selection across app restarts via MMKV.
+  - Supports English and German localization with zero hardcoded strings.
+  - Header options modal (`...`) for switching languages at runtime with MMKV persistence.
 
-- **Custom Floating Bottom Navigation**:
-  - Floating tab bar with pill-shaped active state indicators.
-  - Smooth transitions across Home, Learn, Journal, Progress, and Profile tabs.
+- **Navigation & Tabs**:
+  - Custom floating bottom tab bar (Home, Learn, Journal, Progress, Profile) with active pill indicator.
+  - Auto-selects Progress tab on initial launch.
 
 ## Tech Stack & Architecture
 
 - **Framework**: React Native (0.87.1), React 19
-- **Language**: TypeScript
-- **Navigation**: React Navigation (`@react-navigation/native`, `@react-navigation/bottom-tabs`, `@react-navigation/native-stack`)
-- **State Management**: Zustand with `react-native-mmkv` synchronous persistence
+- **Navigation**: React Navigation (Bottom Tabs & Native Stack)
+- **State Management**: Zustand with `react-native-mmkv` persistence
 - **Data Fetching**: TanStack React Query with Section Transformer pipeline
-- **Localization**: Custom i18n (`en.json`, `de.json`, `TranslationHelper`)
-- **Graphics & SVG**: `react-native-svg` & `react-native-svg-transformer` for vector icons and charts
-- **Safe Area & Insets**: `react-native-safe-area-context` & `react-native-screens`
-- **Styling**: `StyleSheet.create` with custom Design Tokens (`Colors.ts`) and responsive scaling helper (`StyleHelper`)
+- **Graphics & Charts**: `react-native-svg` & `react-native-svg-transformer`
+- **Styling**: `StyleSheet.create` with Design Tokens (`Colors.ts`) & responsive helper (`StyleHelper`)
 
 ## Project Structure
 
 ```
 ├── App.tsx
 ├── app.json
-├── declarations.d.ts
-├── index.js
-├── metro.config.js
 ├── package.json
 ├── tsconfig.json
 ├── assets
 │   ├── images
-│   │   ├── ArrowDown.svg
-│   │   ├── ArrowUp.svg
-│   │   ├── BackIcon.svg
-│   │   ├── GoalTarget.svg
-│   │   ├── Home.svg
-│   │   ├── Journal.svg
-│   │   ├── Learn.svg
-│   │   ├── MoreIcon.svg
-│   │   ├── PlayIcon.svg
-│   │   ├── Profile.svg
-│   │   ├── Progress.svg
-│   │   └── ScaleIcon.svg
 │   └── index.ts
 └── src
     ├── config
@@ -121,7 +73,7 @@ This is a modern, high-performance Fitness & Health Progress Tracking mobile app
     │       │   ├── GoalCard.tsx
     │       │   ├── RecentLogsCard.tsx
     │       │   ├── WalkthroughCard.tsx
-    │       └── WeightChartCard.tsx
+    │       │   └── WeightChartCard.tsx
     │       └── index.tsx
     ├── sharedComponents
     │   ├── Button.tsx
@@ -141,12 +93,6 @@ This is a modern, high-performance Fitness & Health Progress Tracking mobile app
         ├── ProgressTypes.ts
         └── UserTypes.ts
 ```
-
-## Architecture & Data Flow
-
-- **Section Transformer Model**: Mock/Server response is transformed via `transformProgressToSections` into strongly typed `Section[]` items (`weight`, `goal`, `chart`, `bmi`, `recentLogs`, `walkthrough`) and rendered efficiently in a virtualized feed.
-- **State & Local Persistence**: User preferences (like `languageCode`) are stored in Zustand and synchronously persisted to native disk using `react-native-mmkv`.
-- **Localization Pipeline**: Dynamic text resolution via `getTexts(languageCode)` ensuring zero static or hardcoded strings across all screens and components.
 
 ## Getting Started
 
@@ -172,7 +118,7 @@ This is a modern, high-performance Fitness & Health Progress Tracking mobile app
 ## Scripts
 
 - `npm start` - Starts Metro bundler
-- `npm run ios` - Runs app on iOS simulator / device
-- `npm run android` - Runs app on Android emulator / device
-- `npm run lint` - Runs ESLint code quality checks
-- `npx tsc --noEmit` - Runs TypeScript compiler check without emitting files
+- `npm run ios` - Runs app on iOS
+- `npm run android` - Runs app on Android
+- `npm run lint` - Runs ESLint checks
+- `npx tsc --noEmit` - Runs TypeScript type checking

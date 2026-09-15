@@ -11,7 +11,7 @@ export interface ButtonProps extends Omit<PressableProps, 'style'> {
     textStyle?: StyleProp<TextStyle>
 }
 
-export default function Button({ title, isDisabled = false, style, textStyle, disabled, ...props }: ButtonProps) {
+const Button = ({ title, isDisabled = false, style, textStyle, disabled, ...props }: ButtonProps) => {
     const isButtonDisabled = isDisabled || disabled
 
     return (
@@ -31,6 +31,7 @@ export default function Button({ title, isDisabled = false, style, textStyle, di
         </Pressable>
     )
 }
+export default Button
 
 const styles = StyleSheet.create({
     container: {

@@ -20,8 +20,6 @@ const navigationTheme = {
 }
 
 const Navigation: React.FC = () => {
-    const { userData } = useUserState()
-
     const handleNavigationReady = useCallback(() => { }, [])
 
     return (
